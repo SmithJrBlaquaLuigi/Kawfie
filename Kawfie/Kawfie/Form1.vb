@@ -1,13 +1,14 @@
 ﻿Imports Discord
 
 Public Class Form1
+    Dim WithEvents Discord As New DiscordClient
 
-    Dim WithEvents discord As New DiscordClient
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
-            discord.Connect("MzUxMTMyODcwMjU5MTEzOTg0.DIT1-g.qqIEft3YKe1H_vnXw3Np_q4UfBU", TokenType.Bot)
+            Discord.Connect("MzUxMTMyODcwMjU5MTEzOTg0.DIT1-g.qqIEft3YKe1H_vnXw3Np_q4UfBU", TokenType.Bot)
+
         Catch ex As Exception
 
             MessageBox.Show(ex.Message)
@@ -15,4 +16,14 @@ Public Class Form1
         End Try
 
     End Sub
+
+    Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+
+    End Sub
+
+    Private Class DiscordClient
+        Friend Sub Connect(v As String, bot As TokenType)
+            
+        End Sub
+    End Class
 End Class
